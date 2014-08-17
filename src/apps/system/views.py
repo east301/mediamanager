@@ -13,13 +13,14 @@ def version(request):
     try:
         cmd = '/usr/bin/git', 'rev-parse', 'HEAD'
         process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        stdout, stderr = process.communicate()[0].strip()
-        if (process.returncode != 0) or (not stdout.strip()) or stderr.strip():
-            raise Exception
+        stdout, stderr = process.communicate()
 
-        version = stdout.strip()
+        if (process.returncode != 0) or (not stdout.strip()) or stderr.strip():  # pragma: no cover
+            version = '(ERROR)'
+        else:
+            version = stdout.strip()[:12]
 
-    except:
+    except:  # pragma: no cover
         version = '(UNKNOWN)'
 
-    return HttpResponse(version)
+    return HttpResponse(version, content_type='text/plain')
