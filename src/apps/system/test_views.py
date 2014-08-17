@@ -12,3 +12,4 @@ def test__version__returns_correct_response(rf):
     response = version(rf.get('/'))
     assert response.status_code == 200
     assert response['Content-Type'] == 'text/plain'
+    assert response.content
