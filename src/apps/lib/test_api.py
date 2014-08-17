@@ -77,8 +77,6 @@ def test__api__returns_same_httpresponse_instance(rf):
 
 
 def test__api__view_raises_an_exception(rf):
-    response0 = HttpResponse('hello world', content_type='text/plain')
-
     @api(None, None)
     def view(request, params, *args, **kwargs):
         raise Exception
