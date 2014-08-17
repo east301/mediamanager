@@ -1,4 +1,3 @@
-import os
 from django.http import HttpResponse
 from django.shortcuts import render
 from .version import get_application_version_hash

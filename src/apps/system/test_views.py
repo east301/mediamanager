@@ -1,4 +1,3 @@
-import pytest
 from .views import base, version
 
 
