@@ -1,0 +1,18 @@
+language: python
+
+python:
+  - "2.7"
+
+before_install:
+  - cd src
+
+install:
+  - pip install -r requirements.txt
+
+before_build:
+  - cd mediamanager
+  - ln -s settings_development.py settings_local.py
+  - cd ..
+
+script:
+  - py.test
