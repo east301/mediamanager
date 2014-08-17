@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'mediamanager.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    # apps.lib
+    # apps.system
     url(r'^$', 'apps.system.views.base'),
     url(r'^version/$', 'apps.system.views.version'),
 )
