@@ -1,0 +1,66 @@
+###
+### .gitignore for mediamanager project
+###
+### partially from https://github.com/github/gitignore/blob/master/Global/OSX.gitignore,
+### https://github.com/github/gitignore/blob/master/Python.gitignore,
+### and https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+###
+
+# OS X
+.AppleDouble
+.DS_Store
+.LSOverride
+.Trashes
+._*
+
+# OS X (external disk)
+.Spotlight-V100
+.Trashes
+
+# OS X (AFP)
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Python (byte-compiled, optimized)
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Python (distribution, packaging)
+env/
+*.egg-info/
+.Python
+.installed.cfg
+*.egg
+
+# Python (installer logs)
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Python (unit test)
+htmlcov/
+.tox/
+.coverage
+.cache
+coverage.xml
+
+# Python (translations)
+*.mo
+
+# Python (Django stuff)
+*.log
+*.pot
+*.sqlite3
+
+# Windows
+$RECYCLE.BIN/
+Desktop.ini
+Thumbs.db
+ethumbs.db
+
+# MediaManager
+src/mediamanager/settings_local.py
