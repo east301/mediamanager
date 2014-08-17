@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'apps.lib',
+    'apps.repository',
     'apps.system',
 ) + ADDITIONAL_INSTALLED_APPS
 
