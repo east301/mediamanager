@@ -19,4 +19,4 @@ script:
   - PYTHONPATH=`pwd` py.test
 
 after_script:
-  - coveralls --base_dir .. --data_file .coverage --config_file .coveragerc
+  - coveralls
