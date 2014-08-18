@@ -1,0 +1,42 @@
+[
+    {
+        "model": "repository.ItemType",
+        "pk": 1,
+        "fields": {
+            "mime_type": "image/jpeg",
+            "extension": ".jpg"
+        }
+    },
+    {
+        "model": "repository.ItemType",
+        "pk": 2,
+        "fields": {
+            "mime_type": "image/png",
+            "extension": ".png"
+        }
+    },
+    {
+        "model": "repository.ItemType",
+        "pk": 3,
+        "fields": {
+            "mime_type": "image/gif",
+            "extension": ".gif"
+        }
+    },
+    {
+        "model": "repository.ItemType",
+        "pk": 4,
+        "fields": {
+            "mime_type": "image/tiff",
+            "extension": ".tiff"
+        }
+    },
+    {
+        "model": "repository.ItemType",
+        "pk": 5,
+        "fields": {
+            "mime_type": "image/bmp",
+            "extension": ".bmp"
+        }
+    }
+]

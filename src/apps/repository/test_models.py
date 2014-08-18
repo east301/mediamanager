@@ -12,6 +12,8 @@ def test__Item__path__unique_constraint():
 
 @pytest.mark.django_db
 def test__ItemType__extension__unique_constraint():
+    ItemType.objects.all().delete()
+
     ItemType(mime_type='image/jpg', extension='.jpg').save()
 
     with pytest.raises(IntegrityError):
@@ -20,6 +22,8 @@ def test__ItemType__extension__unique_constraint():
 
 @pytest.mark.django_db
 def test__ItemType__mime_type__unique_constraint():
+    ItemType.objects.all().delete()
+
     ItemType(mime_type='image/jpeg', extension='.jpg').save()
 
     with pytest.raises(IntegrityError):
