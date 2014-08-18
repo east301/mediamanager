@@ -8,6 +8,7 @@ before_install:
 
 install:
   - pip install -r requirements.txt
+  - pip install python-coveralls
 
 before_script:
   - cd mediamanager
@@ -16,3 +17,6 @@ before_script:
 
 script:
   - PYTHONPATH=`pwd` py.test
+
+after_script:
+  - coveralls
