@@ -32,7 +32,6 @@ class Command(BaseCommand):
         if is_created:
             self.stdout.write('importing {}'.format(path))
 
-
     @atomic
     def _import_files_from_directory(self, path, recursive):
         for file_path in self._enumerate_files(path, recursive):

@@ -7,7 +7,8 @@ from .orm import get_object_or_none
 @pytest.mark.django_db
 def test__get_object_or_none__returns_correct_result():
     #
-    class Meta: pass
+    class Meta:
+        pass
 
     KeyValuePair = type('KeyValuePair', (models.Model,), {
         'key': models.CharField(max_length=128, unique=True),
