@@ -4,7 +4,8 @@
         "pk": 1,
         "fields": {
             "mime_type": "image/jpeg",
-            "extension": ".jpg"
+            "extension": ".jpg",
+            "processor": "apps.repository.item.ImageItemProcessor"
         }
     },
     {
@@ -12,7 +13,8 @@
         "pk": 2,
         "fields": {
             "mime_type": "image/png",
-            "extension": ".png"
+            "extension": ".png",
+            "processor": "apps.repository.item.ImageItemProcessor"
         }
     },
     {
@@ -20,7 +22,8 @@
         "pk": 3,
         "fields": {
             "mime_type": "image/gif",
-            "extension": ".gif"
+            "extension": ".gif",
+            "processor": "apps.repository.item.ImageItemProcessor"
         }
     },
     {
@@ -28,7 +31,8 @@
         "pk": 4,
         "fields": {
             "mime_type": "image/tiff",
-            "extension": ".tiff"
+            "extension": ".tiff",
+            "processor": "apps.repository.item.ImageItemProcessor"
         }
     },
     {
@@ -36,7 +40,8 @@
         "pk": 5,
         "fields": {
             "mime_type": "image/bmp",
-            "extension": ".bmp"
+            "extension": ".bmp",
+            "processor": "apps.repository.item.ImageItemProcessor"
         }
     }
 ]

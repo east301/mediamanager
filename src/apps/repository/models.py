@@ -16,6 +16,7 @@ class ItemType(models.Model):
     id = models.AutoField(primary_key=True)
     mime_type = models.CharField(max_length=128, unique=True)
     extension = models.CharField(max_length=128, unique=True)
+    processor = models.CharField(max_length=128)
 
 
 class ItemGroup(models.Model):
