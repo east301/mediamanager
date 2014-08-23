@@ -1,5 +1,6 @@
 Django==1.6.6
 django-debug-toolbar==1.2.1
+mock==1.0.1
 pytest-cov==1.8.0
 pytest-django==2.6.2
 pytest-xdist==1.10
