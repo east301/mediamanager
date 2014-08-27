@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+  <style>.thumb { margin: 10px; display: inline-block; }</style>
+{% endblock %}
 
 {% block contents %}
   <div class="col-md-12">
@@ -6,14 +11,53 @@
       <h1>Recent items</h1>
     </div>
 
-    <div class="row">
+    <div class="row" id="thumbs">
       {% for item in items %}
-        <div class="col-xs-6 col-md-3">
-          <a href="#" class="thumbnail">
-            <img src="{% url 'apps.repository.views.thumbnail' id=item.id %}">
+        <div class="thumb">
+          <a href="#">
+            <img
+              class="lazy"
+              src="holder.js/180x160/auto/text:Now loading..."
+              data-original="{% url 'apps.repository.views.thumbnail' id=item.id %}">
           </a>
         </div>
       {% endfor %}
     </div>
   </div>
+{% endblock %}
+
+{% block js %}
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery.lazyload.min.js' %}"></script>
+  <script src="{% static 'js/imagesloaded.min.js' %}"></script>
+  <script src="{% static 'js/masonry.min.js' %}"></script>
+  <script src="{% static 'js/holder.min.js' %}"></script>
+  <script>
+    (function ($) {
+      $(function () {
+        var container = $("#thumbs");
+        container.imagesLoaded(function () {
+          container.masonry({
+            itemSelector: ".thumb",
+            columnWidth: ".thumb",
+            isAnimated: true,
+            isFitWidth: true,
+            isRTL: false,
+            gutterWidth: 10,
+            containerStyle: { position: "relative" },
+            isResizable: true
+          });
+
+          $(".lazy").lazyload({
+            effect: "fadeIn",
+            skip_invisible: false,
+            load: function () {
+              $(this).removeClass("lazy");
+              container.masonry("layout");
+            }
+          });
+        });
+      });
+    })(jQuery);
+  </script>
 {% endblock %}
