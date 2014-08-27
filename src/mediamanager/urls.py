@@ -7,6 +7,10 @@ urlpatterns = patterns('',
     # url(r'^$', 'mediamanager.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    # apps.repository
+    url(r'^repository/recent/$', 'apps.repository.views.recent'),
+    url(r'^repository/item:(?P<id>\d+)/thumbnail/', 'apps.repository.views.thumbnail'),
+
     # apps.system
     url(r'^$', 'apps.system.views.base'),
     url(r'^version/$', 'apps.system.views.version'),
