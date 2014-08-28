@@ -9,6 +9,7 @@ urlpatterns = patterns('',
 
     # apps.repository
     url(r'^repository/recent/$', 'apps.repository.views.recent'),
+    url(r'^repository/item:(?P<id>\d+)/image/', 'apps.repository.views.image'),
     url(r'^repository/item:(?P<id>\d+)/thumbnail/', 'apps.repository.views.thumbnail'),
 
     # apps.system

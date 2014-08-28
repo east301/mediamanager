@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block css %}
+  <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
   <style>.thumb { margin: 10px; display: inline-block; }</style>
 {% endblock %}
 
@@ -14,7 +15,10 @@
     <div class="row" id="thumbs">
       {% for item in items %}
         <div class="thumb">
-          <a href="#">
+          <a
+            class="fancybox"
+            rel="group"
+            href="{% url 'apps.repository.views.image' id=item.id %}?ext={{ item.type.extension }}">
             <img
               class="lazy"
               src="holder.js/180x160/auto/text:Now loading..."
@@ -28,6 +32,7 @@
 
 {% block js %}
   <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
   <script src="{% static 'js/jquery.lazyload.min.js' %}"></script>
   <script src="{% static 'js/imagesloaded.min.js' %}"></script>
   <script src="{% static 'js/masonry.min.js' %}"></script>
@@ -56,6 +61,8 @@
               container.masonry("layout");
             }
           });
+
+          $(".fancybox").fancybox();
         });
       });
     })(jQuery);
