@@ -3,7 +3,7 @@ import pytest
 from django.db import IntegrityError
 from django.http import Http404
 from .models import Item, ItemGroup, ItemGroupEntry, ItemTag, ItemType
-from .views import recent, thumbnail
+from .views import image, recent, thumbnail
 
 try:
     from cStringIO import StringIO
@@ -27,13 +27,31 @@ def test__recent__status_code(rf):
 
 
 @pytest.mark.django_db
-def test__recent__invalid_item_id(rf):
+def test__image__invalid_item_id(rf):
+    with pytest.raises(Http404):
+        image(rf.get('/'), '1')
+
+
+@pytest.mark.django_db
+def test__image__response(rf, items):
+    response = image(rf.get('/'), '1')
+    assert response.status_code == 200
+    assert response['Content-Type'] == 'image/png'
+
+    img = PIL.Image.open(StringIO(response.content))
+    assert img.format == 'PNG'
+    assert 0 < img.size[0]
+    assert 0 < img.size[1]
+
+
+@pytest.mark.django_db
+def test__thumbnail__invalid_item_id(rf):
     with pytest.raises(Http404):
         thumbnail(rf.get('/'), '1')
 
 
 @pytest.mark.django_db
-def test__recnt__response(rf, items):
+def test__thumbnail__response(rf, items):
     response = thumbnail(rf.get('/'), '1')
     assert response.status_code == 200
     assert response['Content-Type'] == 'image/png'
