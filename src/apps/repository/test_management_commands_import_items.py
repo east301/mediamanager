@@ -1,7 +1,7 @@
 import os
 import pytest
 from django.core.management import call_command
-from .models import Item, ItemGroup, ItemGroupEntry, ItemTag, ItemType
+from .models import Item
 
 
 @pytest.mark.django_db

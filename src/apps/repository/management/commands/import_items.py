@@ -1,7 +1,7 @@
 import os
 from django.db.transaction import atomic
 from optparse import make_option
-from django.core.management import BaseCommand, CommandError
+from django.core.management import BaseCommand
 from ...item import get_item_type_from_path
 from ...models import Item
 

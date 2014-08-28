@@ -1,6 +1,5 @@
 import importlib
 import mimetypes
-import os
 import PIL.Image
 from apps.lib.orm import get_object_or_none
 from .models import ItemType

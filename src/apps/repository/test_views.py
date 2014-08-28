@@ -1,8 +1,6 @@
 import PIL.Image
 import pytest
-from django.db import IntegrityError
 from django.http import Http404
-from .models import Item, ItemGroup, ItemGroupEntry, ItemTag, ItemType
 from .views import image, recent, thumbnail
 
 try:
